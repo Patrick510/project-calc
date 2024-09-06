@@ -15,3 +15,25 @@ body {
 footer {
   margin-top: auto;
 }
+
+.items-ul li{
+  width: 6rem;
+  text-align: center;
+}
+
+.items-ul li a{
+  border-radius: 5px;
+  transition: 0.2s all;
+}
+
+.items-ul li a:hover{
+  background-color: white;
+  border-radius: 5px;
+  color: rgb(0, 0, 0) !important;
+}
+
+.active-item{
+  background-color: white;
+  border-radius: 5px;
+  color: rgb(0, 0, 0) !important;
+}
