@@ -11,8 +11,7 @@ body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 265px 1fr;
 }
 
 #main-content {
@@ -30,11 +29,22 @@ footer {
 .items-ul li a{
   transition: 0.1s all;
 }
-/* 
+
 .items-ul li a:hover{
-  border-top: 3px solid white;
+  border-left: 50px solid white;
 }
 
-.active-item{
-  border-top: 3px solid white;
-} */
+/* Estilo específico para itens ativos */
+.items-ul li.active-item a {
+  border-left: 50px solid white;
+}
+
+/* Estilo específico para itens não ativos ao passar o mouse */
+.items-ul li:not(.active-item) a:hover {
+  border-left: 50px solid white;
+}
+
+#header{
+  grid-row: 1 / 3;
+}
+
