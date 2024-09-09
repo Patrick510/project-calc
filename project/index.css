@@ -1,11 +1,16 @@
+/* Para navegadores Firefox e outros modernos */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
 html,
 body {
   height: 100%;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 160px 1fr;
 }
 
 #main-content {
@@ -14,4 +19,42 @@ body {
 
 footer {
   margin-top: auto;
+}
+
+.items-ul li {
+  text-align: center;
+}
+
+.items-ul li a {
+  position: relative; /* Necessário para o pseudo-elemento se alinhar corretamente */
+  transition: 0.1s all;
+}
+
+/* Cria a borda inferior como um pseudo-elemento */
+.items-ul li a::after {
+  content: "";
+  position: absolute;
+  width: 2%;
+  height: 30px;
+  bottom: 4px;
+  left: 0;
+  border-radius: 10px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.1s ease-out;
+}
+
+/* Quando o mouse passa, a linha se expande a partir do centro */
+.items-ul li a:hover::after {
+  transform: scaleX(1); /* A linha se expande para os lados */
+}
+
+/* Estilo para itens ativos (borda visível permanentemente) */
+.items-ul li.active-item a::after {
+  transform: scaleX(1); /* Sempre "aberta" */
+}
+
+#header {
+  grid-row: 1 / 3;
 }
