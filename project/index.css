@@ -7,6 +7,7 @@ html {
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -19,6 +20,16 @@ body {
 
 footer {
   margin-top: auto;
+}
+
+.nav-menu::after{
+  content: "";
+  position: absolute;
+  width: 7%;
+  height: 4px;
+  bottom: 54.6rem;
+  left: 0rem;
+  background-color: white;
 }
 
 .items-ul li {
